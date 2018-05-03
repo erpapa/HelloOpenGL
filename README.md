@@ -1,8 +1,7 @@
 # HelloOpenGL
 
-### Building libglfw.dylib on Mac OS X
-
-```c
+```shell
+# Building libglfw.dylib on Mac OS X
 git clone https://github.com/glfw/glfw.git
 cd glfw
 mkdir build
