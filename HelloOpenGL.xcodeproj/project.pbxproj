@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1855722D209AAAC7001B6AD7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1855722C209AAAC7001B6AD7 /* main.cpp */; };
+		18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18557234209AAADA001B6AD7 /* OpenGL.framework */; };
+		18557240209AB977001B6AD7 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855723F209AB977001B6AD7 /* libglfw.3.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,13 @@
 /* Begin PBXFileReference section */
 		18557229209AAAC7001B6AD7 /* HelloOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855722C209AAAC7001B6AD7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		18557234209AAADA001B6AD7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		18557236209AAAE4001B6AD7 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		18557238209AAF23001B6AD7 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		1855723B209AB201001B6AD7 /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		1855723C209AB201001B6AD7 /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		1855723D209AB21F001B6AD7 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		1855723F209AB977001B6AD7 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18557240209AB977001B6AD7 /* libglfw.3.3.dylib in Frameworks */,
+				18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +54,7 @@
 			children = (
 				1855722B209AAAC7001B6AD7 /* HelloOpenGL */,
 				1855722A209AAAC7001B6AD7 /* Products */,
+				18557233209AAADA001B6AD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +72,29 @@
 				1855722C209AAAC7001B6AD7 /* main.cpp */,
 			);
 			path = HelloOpenGL;
+			sourceTree = "<group>";
+		};
+		18557233209AAADA001B6AD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1855723F209AB977001B6AD7 /* libglfw.3.3.dylib */,
+				1855723D209AB21F001B6AD7 /* libglfw.3.2.dylib */,
+				1855723A209AB201001B6AD7 /* GLFW */,
+				18557238209AAF23001B6AD7 /* libGLEW.2.1.0.dylib */,
+				18557236209AAAE4001B6AD7 /* GLUT.framework */,
+				18557234209AAADA001B6AD7 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1855723A209AB201001B6AD7 /* GLFW */ = {
+			isa = PBXGroup;
+			children = (
+				1855723B209AB201001B6AD7 /* glfw3.h */,
+				1855723C209AB201001B6AD7 /* glfw3native.h */,
+			);
+			name = GLFW;
+			path = ../../../../../usr/local/Cellar/glfw/3.2.1/include/GLFW;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +273,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,6 +284,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
