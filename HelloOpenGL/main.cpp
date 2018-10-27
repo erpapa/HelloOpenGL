@@ -249,7 +249,8 @@ int main(int argc, char** argv)
         offset = add_character(tris, face, char_str[i], bezier_steps, extrude, offset);
     }
     
-    int vert_size = (int)tris.size() * 9;
+    int vert_ount = (int)tris.size() * 3;
+    int vert_size = vert_ount * 3;
     float *vertices = (float *)malloc(sizeof(float) * vert_size);
     for (int i = 0, j = 0; i < tris.size(); i+=1, j+=9) {
         Tri t = tris[i];
@@ -358,7 +359,7 @@ int main(int argc, char** argv)
         glUseProgram(program);
         glBindVertexArray(vao);
         glUniformMatrix4fv(transform_uniform, 1, GL_FALSE, matrix);
-        glDrawArrays(GL_TRIANGLES, 0, vert_size);
+        glDrawArrays(GL_TRIANGLES, 0, vert_ount);
         
         glfwSwapBuffers(window);             // 交换颜色缓冲
         glfwPollEvents();                   // 检查有没有触发什么事件
