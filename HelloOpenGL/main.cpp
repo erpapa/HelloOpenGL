@@ -211,7 +211,7 @@ GLuint create_program(const char *vertString, const char *fragString)
     glLinkProgram(program);
     glGetProgramiv(program, GL_LINK_STATUS, &status);
     if (status == GL_FALSE) {
-        return 0;
+        return -1;
     }
     if (vertShader) {
         glDeleteShader(vertShader);
@@ -226,8 +226,8 @@ GLuint create_program(const char *vertString, const char *fragString)
 
 int main(int argc, char** argv)
 {
-    const char* char_font = "hwxk.ttf";
-    const char* char_str = "Hi";
+    const char *char_font = "hwxk.ttf";
+    const char *char_str = "Hi";
     int char_height = 48;
     int bezier_steps = 4;
     float extrude = 16;
@@ -283,9 +283,10 @@ int main(int argc, char** argv)
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE ); // 窗口尺寸不可变
 
     //创建窗口，glfwCreateWindow前三个参数分别为 窗口宽和高，以及标题
-    GLFWwindow* window = glfwCreateWindow(800, 600, "HelloOpenGL", nullptr, nullptr);
-    if( window == nullptr ){
+    GLFWwindow *window = glfwCreateWindow(800, 600, "HelloOpenGL", nullptr, nullptr);
+    if (window == nullptr){
         std::cout << "Failed to create GLFW window" << std::endl;
+        free(vertices);
         glfwTerminate();  // 销毁窗口和资源
         return -1;
     }
@@ -317,6 +318,12 @@ int main(int argc, char** argv)
     FragColor = vec4(1.0, 0.5, 0.2, 1.0);\n\
     }\0";
     GLuint program = create_program(vertString, fragString);
+    if (program == -1) {
+        std::cout << "Failed to create program" << std::endl;
+        free(vertices);
+        glfwTerminate();  // 销毁窗口和资源
+        return -1;
+    }
     GLuint transform_uniform = glGetUniformLocation(program, "transformMatrix");
 
     // 创建顶点缓存
@@ -329,7 +336,7 @@ int main(int argc, char** argv)
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, vert_size * sizeof(float), vertices, GL_STATIC_DRAW);
     
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
     
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
@@ -347,29 +354,29 @@ int main(int argc, char** argv)
         // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // 默认填充模式
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // 线框模式
 
+        glUseProgram(program);
         // x轴方向旋转
         float radians = degrees * (M_PI / 180);
         float cos = cosf(radians);
         float sin = sinf(radians);
-        
         GLfloat matrix[] = { 1.0f, 0.0f, 0.0f, 0.0f,
             0.0f, cos, sin, 0.0f,
             0.0f, -sin, cos, 0.0f,
             0.0f, 0.0f, 0.0f, 1.0f };
-        glUseProgram(program);
-        glBindVertexArray(vao);
         glUniformMatrix4fv(transform_uniform, 1, GL_FALSE, matrix);
+
+        glBindVertexArray(vao);
         glDrawArrays(GL_TRIANGLES, 0, vert_ount);
         
         glfwSwapBuffers(window);             // 交换颜色缓冲
         glfwPollEvents();                   // 检查有没有触发什么事件
         degrees += 0.01;
     }
-    free(vertices);
     glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
     glValidateProgram(program);
     glDeleteProgram(program);
+    free(vertices);
     glfwTerminate(); //释放/删除之前的分配的所有资源
     return 0;
 }
