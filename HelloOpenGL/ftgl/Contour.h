@@ -29,25 +29,20 @@
 #define _DIFONT_CONTOUR_H_
 
 #include <vector>
-#include <ft2build.h>
-#include <freetype.h>
-#include <ftglyph.h>
-#include <ftoutln.h>
-#include <fttrigon.h>
-
 #include "Point.h"
 
-/**
- * Contour class is a container of points that describe a vector font
- * outline. It is used as a container for the output of the bezier curve
- * evaluator in Vectoriser.
- *
- * @see OutlineGlyph
- * @see PolygonGlyph
- * @see Point
- */
-
- class Contour {
+namespace ftgl {
+    
+    /**
+     * Contour class is a container of points that describe a vector font
+     * outline. It is used as a container for the output of the bezier curve
+     * evaluator in Vectoriser.
+     *
+     * @see OutlineGlyph
+     * @see PolygonGlyph
+     * @see Point
+     */
+    class Contour {
     public:
         /**
          * Constructor
@@ -55,9 +50,10 @@
          * @param contour
          * @param pointTags
          * @param numberOfPoints
+         * @param bezierSteps
          */
         Contour(FT_Vector* contour, char* pointTags, unsigned int numberOfPoints, unsigned short bezierSteps);
-
+        
         /**
          * Destructor
          */
@@ -68,7 +64,7 @@
             frontPointList.clear();
             backPointList.clear();
         }
-
+        
         /**
          * Return a point at index.
          *
@@ -76,14 +72,14 @@
          * @return const point reference
          */
         const Point& GetPoint(size_t index) const { return pointList[index]; }
-
+        
         /**
          * How many points define this contour
          *
          * @return the number of points in this contour
          */
         size_t PointCount() const { return pointList.size(); }
-
+        
         /**
          * Make sure the glyph has the proper parity and create the front/back
          * outset contour.
@@ -91,7 +87,7 @@
          * @param parity  The contour's parity within the glyph.
          */
         void SetParity(int parity);
-
+        
         /**
          * Make sure the glyph has the proper parity and create the front/back
          * outset contour.
@@ -101,15 +97,15 @@
         bool GetDirection() const {
             return clockwise;
         }
-
+        
         bool IsInside(const Contour* big) const {
-            if(minx > big->minx && miny > big->miny 
-                && maxx < big->maxx && maxy < big->maxy)
+            if(minx > big->minx && miny > big->miny
+               && maxx < big->maxx && maxy < big->maxy)
                 return true;
-            else 
+            else
                 return false;
         }
-
+        
         float minx, miny, maxx, maxy;
     private:
         /**
@@ -119,7 +115,7 @@
          * @param point The point to be added to the contour.
          */
         void AddPoint(Point point);
-
+        
         /**
          * Add a point to this contour. This function tests for duplicate
          * points.
@@ -127,25 +123,25 @@
          * @param point The point to be added to the contour.
          */
         void AddOutsetPoint(Point point);
-
-
+        
+        
         /**
          * De Casteljau (bezier) algorithm contributed by Jed Soane
          * Evaluates a quadratic or conic (second degree) curve
          */
         void evaluateQuadraticCurve(Point, Point, Point, unsigned short);
-
+        
         /**
          * De Casteljau (bezier) algorithm contributed by Jed Soane
          * Evaluates a cubic (third degree) curve
          */
         void evaluateCubicCurve(Point, Point, Point, Point, unsigned short);
-
+        
         /**
          * Compute the outset point coordinates
          */
         Point ComputeOutsetPoint(Point a, Point b, Point c);
-
+        
         /**
          *  The list of points in this contour
          */
@@ -159,8 +155,9 @@
          *  Is this contour clockwise or anti-clockwise?
          */
         bool clockwise;
-
-};
+        
+    };
+}
 
 #endif // __Contour__
 

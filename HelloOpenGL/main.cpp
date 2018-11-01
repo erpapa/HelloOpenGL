@@ -74,9 +74,9 @@ float add_character(std::vector<Tri> &tris, FT_Face face, char ch, int bezier_st
     
     prev_rsb_delta = face->glyph->rsb_delta;
     
-    Vectoriser *vectoriser = new Vectoriser(face->glyph, bezier_steps);
+    ftgl::Vectoriser *vectoriser = new ftgl::Vectoriser(face->glyph, bezier_steps);
     for(size_t c = 0; c < vectoriser->ContourCount(); ++c) {
-        const Contour* contour = vectoriser->GetContour(c);
+        const ftgl::Contour* contour = vectoriser->GetContour(c);
         
         for(size_t p = 0; p < contour->PointCount() - 1; ++p) {
             const double* d1 = contour->GetPoint(p);
@@ -115,7 +115,7 @@ float add_character(std::vector<Tri> &tris, FT_Face face, char ch, int bezier_st
             
             p2t::CDT* cdt = new p2t::CDT(polyline);
             for(size_t cm = 0; cm < vectoriser->ContourCount(); ++cm) {
-                const Contour* sm = vectoriser->GetContour(cm);
+                const ftgl::Contour* sm = vectoriser->GetContour(cm);
                 if(c != cm && !sm->GetDirection() && sm->IsInside(contour)) {
                     std::vector<p2t::Point*> pl;
                     for(size_t p = 0; p < contour->PointCount(); ++p) {

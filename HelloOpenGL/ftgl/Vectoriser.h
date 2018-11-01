@@ -29,25 +29,24 @@
 
 #include <list>
 #include <vector>
-
 #include "Contour.h"
-
 
 const double FTGL_FRONT_FACING = 1.0;
 const double FTGL_BACK_FACING = -1.0;
 
-/**
- * Vectoriser class is a helper class that converts font outlines into
- * point data.
- *
- * @see ExtrudeGlyph
- * @see OutlineGlyph
- * @see PolygonGlyph
- * @see Contour
- * @see Point
- *
- */
-class Vectoriser {
+namespace ftgl {
+    /**
+     * Vectoriser class is a helper class that converts font outlines into
+     * point data.
+     *
+     * @see ExtrudeGlyph
+     * @see OutlineGlyph
+     * @see PolygonGlyph
+     * @see Contour
+     * @see Point
+     *
+     */
+    class Vectoriser {
     public:
         /**
          * Constructor
@@ -55,33 +54,33 @@ class Vectoriser {
          * @param glyph The freetype glyph to be processed
          */
         Vectoriser(const FT_GlyphSlot glyph, unsigned short bezierSteps);
-
+        
         /**
          *  Destructor
          */
         virtual ~Vectoriser();
-
+        
         /**
          * Get the total count of points in this outline
          *
          * @return the number of points
          */
         size_t PointCount();
-
+        
         /**
          * Get the count of contours in this outline
          *
          * @return the number of contours
          */
         size_t ContourCount() const { return ftContourCount; }
-
+        
         /**
          * Return a contour at index
          *
          * @return the number of contours
          */
         const Contour* const GetContour(size_t index) const;
-
+        
         /**
          * Get the number of points in a specific contour in this outline
          *
@@ -89,14 +88,14 @@ class Vectoriser {
          * @return      the number of points in contour[c]
          */
         size_t ContourSize(int c) const { return contourList[c]->PointCount(); }
-
+        
         /**
          * Get the flag for the tesselation rule for this outline
          *
          * @return The contour flag
          */
         int ContourFlag() const { return contourFlag; }
-
+        
     private:
         /**
          * Process the freetype outline data into contours of points
@@ -105,12 +104,12 @@ class Vectoriser {
          * @param back back outset distance
          */
         void ProcessContours(unsigned short bezierSteps);
-
+        
         /**
          * The list of contours in the glyph
          */
         Contour** contourList;
-
+        
         /**
          * The number of contours reported by Freetype
          */
@@ -125,6 +124,7 @@ class Vectoriser {
          * A Freetype outline
          */
         FT_Outline outline;
-};
+    };
+}
 
 #endif  //  __Vectoriser__

@@ -34,10 +34,11 @@
 #include <ftoutln.h>
 #include <fttrigon.h>
 
-/**
- * Point class is a basic 3-dimensional point or vector.
- */
-class Point {
+namespace ftgl {
+    /**
+     * Point class is a basic 3-dimensional point or vector.
+     */
+    class Point {
     public:
         /**
          * Default constructor. Point is set to zero.
@@ -48,7 +49,7 @@ class Point {
             values[1] = 0;
             values[2] = 0;
         }
-
+        
         /**
          * Constructor. Z coordinate is set to zero if unspecified.
          *
@@ -57,13 +58,13 @@ class Point {
          * @param z Third component
          */
         Point(const double x, const double y,
-                     const double z = 0)
+              const double z = 0)
         {
             values[0] = x;
             values[1] = y;
             values[2] = z;
         }
-
+        
         /**
          * Constructor. This converts an FT_Vector to an difont::Point
          *
@@ -75,7 +76,7 @@ class Point {
             values[1] = ft_vector.y;
             values[2] = 0;
         }
-
+        
         /**
          * Normalise a point's coordinates. If the coordinates are zero,
          * the point is left untouched.
@@ -83,8 +84,8 @@ class Point {
          * @return A vector of norm one.
          */
         Point Normalise();
-
-
+        
+        
         /**
          * Operator += In Place Addition.
          *
@@ -96,10 +97,10 @@ class Point {
             values[0] += point.values[0];
             values[1] += point.values[1];
             values[2] += point.values[2];
-
+            
             return *this;
         }
-
+        
         /**
          * Operator +
          *
@@ -112,10 +113,10 @@ class Point {
             temp.values[0] = values[0] + point.values[0];
             temp.values[1] = values[1] + point.values[1];
             temp.values[2] = values[2] + point.values[2];
-
+            
             return temp;
         }
-
+        
         /**
          * Operator -= In Place Substraction.
          *
@@ -127,10 +128,10 @@ class Point {
             values[0] -= point.values[0];
             values[1] -= point.values[1];
             values[2] -= point.values[2];
-
+            
             return *this;
         }
-
+        
         /**
          * Operator -
          *
@@ -143,10 +144,10 @@ class Point {
             temp.values[0] = values[0] - point.values[0];
             temp.values[1] = values[1] - point.values[1];
             temp.values[2] = values[2] - point.values[2];
-
+            
             return temp;
         }
-
+        
         /**
          * Operator *  Scalar multiplication
          *
@@ -159,11 +160,11 @@ class Point {
             temp.values[0] = values[0] * multiplier;
             temp.values[1] = values[1] * multiplier;
             temp.values[2] = values[2] * multiplier;
-
+            
             return temp;
         }
-
-
+        
+        
         /**
          * Operator *  Scalar multiplication
          *
@@ -175,8 +176,8 @@ class Point {
         {
             return point * multiplier;
         }
-
-
+        
+        
         /**
          * Operator *  Scalar product
          *
@@ -190,8 +191,8 @@ class Point {
             + a.values[1] * b.values[1]
             + a.values[2] * b.values[2];
         }
-
-
+        
+        
         /**
          * Operator ^  Vector product
          *
@@ -209,8 +210,8 @@ class Point {
             - values[1] * point.values[0];
             return temp;
         }
-
-
+        
+        
         /**
          * Operator == Tests for equality
          *
@@ -219,8 +220,8 @@ class Point {
          * @return true if a & b are equal
          */
         friend bool operator == (const Point &a, const Point &b);
-
-
+        
+        
         /**
          * Operator != Tests for non equality
          *
@@ -229,8 +230,8 @@ class Point {
          * @return true if a & b are not equal
          */
         friend bool operator != (const Point &a, const Point &b);
-
-
+        
+        
         /**
          * Cast to double*
          */
@@ -238,16 +239,16 @@ class Point {
         {
             return values;
         }
-
-
+        
+        
         /**
          * Setters
          */
         void X(double x) { values[0] = x; };
         void Y(double y) { values[1] = y; };
         void Z(double z) { values[2] = z; };
-
-
+        
+        
         /**
          * Getters
          */
@@ -263,7 +264,7 @@ class Point {
          * The point data
          */
         double values[3];
-};
-
+    };
+}
 
 #endif

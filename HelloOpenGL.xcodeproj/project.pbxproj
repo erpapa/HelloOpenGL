@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800072D218AD1E700BC0EFC /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18000727218AD1E700BC0EFC /* Contour.cpp */; };
+		1800072E218AD1E700BC0EFC /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18000728218AD1E700BC0EFC /* Point.cpp */; };
+		1800072F218AD1E700BC0EFC /* Vectoriser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1800072A218AD1E700BC0EFC /* Vectoriser.cpp */; };
 		18379ACA2182ACF900383953 /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379AB82182ACF800383953 /* shapes.cc */; };
 		18379ACB2182ACF900383953 /* sweep.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABB2182ACF800383953 /* sweep.cc */; };
 		18379ACC2182ACF900383953 /* sweep_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABC2182ACF800383953 /* sweep_context.cc */; };
 		18379ACD2182ACF900383953 /* cdt.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABD2182ACF800383953 /* cdt.cc */; };
 		18379ACE2182ACF900383953 /* advancing_front.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABF2182ACF800383953 /* advancing_front.cc */; };
-		18379ACF2182ACF900383953 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18379AC52182ACF900383953 /* Contour.cpp */; };
-		18379AD02182ACF900383953 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18379AC62182ACF900383953 /* Point.cpp */; };
-		18379AD12182ACF900383953 /* Vectoriser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18379AC82182ACF900383953 /* Vectoriser.cpp */; };
 		1855722D209AAAC7001B6AD7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1855722C209AAAC7001B6AD7 /* main.cpp */; };
 		18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18557234209AAADA001B6AD7 /* OpenGL.framework */; };
 		1881A92521836C4D00871440 /* pcf.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A78521836C4B00871440 /* pcf.c */; };
@@ -76,6 +76,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18000726218AD1E700BC0EFC /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		18000727218AD1E700BC0EFC /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
+		18000728218AD1E700BC0EFC /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		18000729218AD1E700BC0EFC /* Contour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contour.h; sourceTree = "<group>"; };
+		1800072A218AD1E700BC0EFC /* Vectoriser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vectoriser.cpp; sourceTree = "<group>"; };
+		1800072B218AD1E700BC0EFC /* ftgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftgl.h; sourceTree = "<group>"; };
+		1800072C218AD1E700BC0EFC /* Vectoriser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vectoriser.h; sourceTree = "<group>"; };
 		18379AB52182ACF800383953 /* poly2tri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poly2tri.h; sourceTree = "<group>"; };
 		18379AB72182ACF800383953 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		18379AB82182ACF800383953 /* shapes.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shapes.cc; sourceTree = "<group>"; };
@@ -88,12 +95,6 @@
 		18379AC02182ACF800383953 /* sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep.h; sourceTree = "<group>"; };
 		18379AC12182ACF800383953 /* sweep_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep_context.h; sourceTree = "<group>"; };
 		18379AC22182ACF800383953 /* cdt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdt.h; sourceTree = "<group>"; };
-		18379AC42182ACF900383953 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
-		18379AC52182ACF900383953 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
-		18379AC62182ACF900383953 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
-		18379AC72182ACF900383953 /* Contour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contour.h; sourceTree = "<group>"; };
-		18379AC82182ACF900383953 /* Vectoriser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vectoriser.cpp; sourceTree = "<group>"; };
-		18379AC92182ACF900383953 /* Vectoriser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vectoriser.h; sourceTree = "<group>"; };
 		18557229209AAAC7001B6AD7 /* HelloOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855722C209AAAC7001B6AD7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18557234209AAADA001B6AD7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -250,6 +251,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18000725218AD1E700BC0EFC /* ftgl */ = {
+			isa = PBXGroup;
+			children = (
+				18000726218AD1E700BC0EFC /* Point.h */,
+				18000727218AD1E700BC0EFC /* Contour.cpp */,
+				18000728218AD1E700BC0EFC /* Point.cpp */,
+				18000729218AD1E700BC0EFC /* Contour.h */,
+				1800072A218AD1E700BC0EFC /* Vectoriser.cpp */,
+				1800072B218AD1E700BC0EFC /* ftgl.h */,
+				1800072C218AD1E700BC0EFC /* Vectoriser.h */,
+			);
+			path = ftgl;
+			sourceTree = "<group>";
+		};
 		18379AB42182ACF800383953 /* poly2tri */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,13 +322,8 @@
 			children = (
 				1881AA3C2183778C00871440 /* GLFW */,
 				1881A72021836C4B00871440 /* freetype */,
+				18000725218AD1E700BC0EFC /* ftgl */,
 				18379AB42182ACF800383953 /* poly2tri */,
-				18379AC42182ACF900383953 /* Point.h */,
-				18379AC62182ACF900383953 /* Point.cpp */,
-				18379AC72182ACF900383953 /* Contour.h */,
-				18379AC52182ACF900383953 /* Contour.cpp */,
-				18379AC92182ACF900383953 /* Vectoriser.h */,
-				18379AC82182ACF900383953 /* Vectoriser.cpp */,
 				1855722C209AAAC7001B6AD7 /* main.cpp */,
 			);
 			path = HelloOpenGL;
@@ -751,19 +761,19 @@
 				1881A9F321836C4D00871440 /* ftlcdfil.c in Sources */,
 				1881A9FF21836C4D00871440 /* ftstroke.c in Sources */,
 				1881AA0221836C4D00871440 /* ftsynth.c in Sources */,
+				1800072D218AD1E700BC0EFC /* Contour.cpp in Sources */,
 				1881A9F221836C4D00871440 /* ftpatent.c in Sources */,
 				1881A9E921836C4D00871440 /* ftpfr.c in Sources */,
+				1800072E218AD1E700BC0EFC /* Point.cpp in Sources */,
 				1881A9A321836C4D00871440 /* pfr.c in Sources */,
 				1881A9E221836C4D00871440 /* ftinit.c in Sources */,
 				1881A95621836C4D00871440 /* smooth.c in Sources */,
-				18379AD12182ACF900383953 /* Vectoriser.cpp in Sources */,
 				1881A9EE21836C4D00871440 /* ftsystem.c in Sources */,
 				1881A9F821836C4D00871440 /* ftwinfnt.c in Sources */,
 				1881A9EB21836C4D00871440 /* ftcid.c in Sources */,
 				1881AA0121836C4D00871440 /* ftgasp.c in Sources */,
 				1881A9F121836C4D00871440 /* ftbdf.c in Sources */,
 				1881A9EC21836C4D00871440 /* ftglyph.c in Sources */,
-				18379ACF2182ACF900383953 /* Contour.cpp in Sources */,
 				1881A9F721836C4D00871440 /* fttype1.c in Sources */,
 				1881A9FE21836C4D00871440 /* ftbbox.c in Sources */,
 				1881A94D21836C4D00871440 /* winfnt.c in Sources */,
@@ -773,7 +783,6 @@
 				1881A99821836C4D00871440 /* psaux.c in Sources */,
 				1855722D209AAAC7001B6AD7 /* main.cpp in Sources */,
 				1881A96521836C4D00871440 /* cff.c in Sources */,
-				18379AD02182ACF900383953 /* Point.cpp in Sources */,
 				1881A9D021836C4D00871440 /* truetype.c in Sources */,
 				18379ACB2182ACF900383953 /* sweep.cc in Sources */,
 				1881A9DA21836C4D00871440 /* raster.c in Sources */,
@@ -787,6 +796,7 @@
 				18379ACE2182ACF900383953 /* advancing_front.cc in Sources */,
 				1881A9C121836C4D00871440 /* autofit.c in Sources */,
 				1881A9E621836C4D00871440 /* ftbase.c in Sources */,
+				1800072F218AD1E700BC0EFC /* Vectoriser.cpp in Sources */,
 				1881A9A121836C4D00871440 /* type1cid.c in Sources */,
 				1881A9E121836C4D00871440 /* ftfntfmt.c in Sources */,
 				1881A94721836C4D00871440 /* sfnt.c in Sources */,
