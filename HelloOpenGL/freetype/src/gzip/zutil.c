@@ -11,6 +11,14 @@
 extern void exit OF((int));
 #endif
 
+#ifdef DEBUG
+int z_verbose = 0;
+
+void z_error(char* message)
+{
+    // printf("%s", message);
+}
+#endif
 
 #ifndef HAVE_MEMCPY
 

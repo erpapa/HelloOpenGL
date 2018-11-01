@@ -59,7 +59,6 @@
 		1881AA0121836C4D00871440 /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A91A21836C4D00871440 /* ftgasp.c */; };
 		1881AA0221836C4D00871440 /* ftsynth.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A91B21836C4D00871440 /* ftsynth.c */; };
 		1881AA0721836C4D00871440 /* ftbzip2.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A92121836C4D00871440 /* ftbzip2.c */; };
-		1881AA092183723C00871440 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881AA082183723C00871440 /* libz.1.2.8.tbd */; };
 		1881AA402183778C00871440 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881AA3F2183778C00871440 /* libglfw.3.3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -242,7 +241,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1881AA092183723C00871440 /* libz.1.2.8.tbd in Frameworks */,
 				1881AA402183778C00871440 /* libglfw.3.3.dylib in Frameworks */,
 				18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */,
 			);
@@ -924,7 +922,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					FT2_BUILD_LIBRARY,
-					FT_CONFIG_OPTION_SYSTEM_ZLIB,
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -942,10 +939,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					FT2_BUILD_LIBRARY,
-					FT_CONFIG_OPTION_SYSTEM_ZLIB,
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = FT2_BUILD_LIBRARY;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/HelloOpenGL\"",
 					"\"$(SRCROOT)/HelloOpenGL/freetype/include\"",
