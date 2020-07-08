@@ -15,6 +15,7 @@
 		18379ACC2182ACF900383953 /* sweep_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABC2182ACF800383953 /* sweep_context.cc */; };
 		18379ACD2182ACF900383953 /* cdt.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABD2182ACF800383953 /* cdt.cc */; };
 		18379ACE2182ACF900383953 /* advancing_front.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18379ABF2182ACF800383953 /* advancing_front.cc */; };
+		183E8CCA24B566F6007720F4 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 183E8CC924B566F6007720F4 /* libglfw.3.3.dylib */; };
 		1855722D209AAAC7001B6AD7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1855722C209AAAC7001B6AD7 /* main.cpp */; };
 		18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18557234209AAADA001B6AD7 /* OpenGL.framework */; };
 		1881A92521836C4D00871440 /* pcf.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A78521836C4B00871440 /* pcf.c */; };
@@ -59,7 +60,6 @@
 		1881AA0121836C4D00871440 /* ftgasp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A91A21836C4D00871440 /* ftgasp.c */; };
 		1881AA0221836C4D00871440 /* ftsynth.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A91B21836C4D00871440 /* ftsynth.c */; };
 		1881AA0721836C4D00871440 /* ftbzip2.c in Sources */ = {isa = PBXBuildFile; fileRef = 1881A92121836C4D00871440 /* ftbzip2.c */; };
-		1881AA402183778C00871440 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881AA3F2183778C00871440 /* libglfw.3.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +94,7 @@
 		18379AC02182ACF800383953 /* sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep.h; sourceTree = "<group>"; };
 		18379AC12182ACF800383953 /* sweep_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep_context.h; sourceTree = "<group>"; };
 		18379AC22182ACF800383953 /* cdt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdt.h; sourceTree = "<group>"; };
+		183E8CC924B566F6007720F4 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.3.dylib; sourceTree = "<group>"; };
 		18557229209AAAC7001B6AD7 /* HelloOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855722C209AAAC7001B6AD7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18557234209AAADA001B6AD7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -233,7 +234,6 @@
 		1881AA082183723C00871440 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		1881AA3D2183778C00871440 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
 		1881AA3E2183778C00871440 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
-		1881AA3F2183778C00871440 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.3.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1881AA402183778C00871440 /* libglfw.3.3.dylib in Frameworks */,
+				183E8CCA24B566F6007720F4 /* libglfw.3.3.dylib in Frameworks */,
 				18557235209AAADA001B6AD7 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,12 +252,12 @@
 		18000725218AD1E700BC0EFC /* ftgl */ = {
 			isa = PBXGroup;
 			children = (
-				18000726218AD1E700BC0EFC /* Point.h */,
-				18000727218AD1E700BC0EFC /* Contour.cpp */,
-				18000728218AD1E700BC0EFC /* Point.cpp */,
-				18000729218AD1E700BC0EFC /* Contour.h */,
-				1800072A218AD1E700BC0EFC /* Vectoriser.cpp */,
 				1800072B218AD1E700BC0EFC /* ftgl.h */,
+				18000727218AD1E700BC0EFC /* Contour.cpp */,
+				18000729218AD1E700BC0EFC /* Contour.h */,
+				18000728218AD1E700BC0EFC /* Point.cpp */,
+				18000726218AD1E700BC0EFC /* Point.h */,
+				1800072A218AD1E700BC0EFC /* Vectoriser.cpp */,
 				1800072C218AD1E700BC0EFC /* Vectoriser.h */,
 			);
 			path = ftgl;
@@ -351,54 +351,54 @@
 		1881A72121836C4B00871440 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				1881A72221836C4B00871440 /* ftsnames.h */,
-				1881A72321836C4B00871440 /* ftwinfnt.h */,
-				1881A72421836C4B00871440 /* ftsizes.h */,
-				1881A72521836C4B00871440 /* fttypes.h */,
-				1881A72621836C4B00871440 /* ftmm.h */,
 				1881A72721836C4B00871440 /* config */,
-				1881A72D21836C4B00871440 /* ftmodapi.h */,
-				1881A72E21836C4B00871440 /* ftbzip2.h */,
-				1881A72F21836C4B00871440 /* ttunpat.h */,
-				1881A73021836C4B00871440 /* fttrigon.h */,
-				1881A73121836C4B00871440 /* ftbbox.h */,
-				1881A73221836C4B00871440 /* ftgzip.h */,
-				1881A73321836C4B00871440 /* internal */,
-				1881A75A21836C4B00871440 /* ftoutln.h */,
-				1881A75B21836C4B00871440 /* ftadvanc.h */,
-				1881A75C21836C4B00871440 /* ftsynth.h */,
-				1881A75D21836C4B00871440 /* fterrors.h */,
-				1881A75E21836C4B00871440 /* ftgasp.h */,
-				1881A75F21836C4B00871440 /* ftstroke.h */,
-				1881A76021836C4B00871440 /* ftcache.h */,
-				1881A76121836C4B00871440 /* ft2build.h */,
-				1881A76221836C4B00871440 /* ftotval.h */,
 				1881A76321836C4B00871440 /* freetype.h */,
-				1881A76421836C4B00871440 /* ftincrem.h */,
-				1881A76521836C4B00871440 /* ftfntfmt.h */,
-				1881A76621836C4B00871440 /* ftttdrv.h */,
-				1881A76721836C4B00871440 /* fterrdef.h */,
-				1881A76821836C4B00871440 /* ttnameid.h */,
-				1881A76921836C4B00871440 /* ftpfr.h */,
-				1881A76A21836C4B00871440 /* ftgxval.h */,
+				1881A76121836C4B00871440 /* ft2build.h */,
+				1881A75B21836C4B00871440 /* ftadvanc.h */,
+				1881A77A21836C4B00871440 /* ftautoh.h */,
+				1881A73121836C4B00871440 /* ftbbox.h */,
+				1881A77B21836C4B00871440 /* ftbdf.h */,
+				1881A77621836C4B00871440 /* ftbitmap.h */,
+				1881A72E21836C4B00871440 /* ftbzip2.h */,
+				1881A76021836C4B00871440 /* ftcache.h */,
 				1881A76B21836C4B00871440 /* ftcffdrv.h */,
 				1881A76C21836C4B00871440 /* ftchapters.h */,
-				1881A76D21836C4B00871440 /* tttags.h */,
-				1881A76E21836C4B00871440 /* ftlzw.h */,
-				1881A76F21836C4B00871440 /* ftsystem.h */,
-				1881A77021836C4B00871440 /* t1tables.h */,
-				1881A77121836C4B00871440 /* ftimage.h */,
-				1881A77221836C4B00871440 /* tttables.h */,
 				1881A77321836C4B00871440 /* ftcid.h */,
+				1881A76721836C4B00871440 /* fterrdef.h */,
+				1881A75D21836C4B00871440 /* fterrors.h */,
+				1881A76521836C4B00871440 /* ftfntfmt.h */,
+				1881A75E21836C4B00871440 /* ftgasp.h */,
 				1881A77421836C4B00871440 /* ftglyph.h */,
-				1881A77521836C4B00871440 /* ftmoderr.h */,
-				1881A77621836C4B00871440 /* ftbitmap.h */,
-				1881A77721836C4B00871440 /* ftlist.h */,
-				1881A77821836C4B00871440 /* ftmac.h */,
+				1881A76A21836C4B00871440 /* ftgxval.h */,
+				1881A73221836C4B00871440 /* ftgzip.h */,
+				1881A77121836C4B00871440 /* ftimage.h */,
+				1881A76421836C4B00871440 /* ftincrem.h */,
 				1881A77921836C4B00871440 /* ftlcdfil.h */,
-				1881A77A21836C4B00871440 /* ftautoh.h */,
-				1881A77B21836C4B00871440 /* ftbdf.h */,
+				1881A77721836C4B00871440 /* ftlist.h */,
+				1881A76E21836C4B00871440 /* ftlzw.h */,
+				1881A77821836C4B00871440 /* ftmac.h */,
+				1881A72621836C4B00871440 /* ftmm.h */,
+				1881A72D21836C4B00871440 /* ftmodapi.h */,
+				1881A77521836C4B00871440 /* ftmoderr.h */,
+				1881A76221836C4B00871440 /* ftotval.h */,
+				1881A75A21836C4B00871440 /* ftoutln.h */,
+				1881A76921836C4B00871440 /* ftpfr.h */,
 				1881A77C21836C4B00871440 /* ftrender.h */,
+				1881A72421836C4B00871440 /* ftsizes.h */,
+				1881A72221836C4B00871440 /* ftsnames.h */,
+				1881A75F21836C4B00871440 /* ftstroke.h */,
+				1881A75C21836C4B00871440 /* ftsynth.h */,
+				1881A76F21836C4B00871440 /* ftsystem.h */,
+				1881A73021836C4B00871440 /* fttrigon.h */,
+				1881A76621836C4B00871440 /* ftttdrv.h */,
+				1881A72521836C4B00871440 /* fttypes.h */,
+				1881A72321836C4B00871440 /* ftwinfnt.h */,
+				1881A73321836C4B00871440 /* internal */,
+				1881A77021836C4B00871440 /* t1tables.h */,
+				1881A76821836C4B00871440 /* ttnameid.h */,
+				1881A77221836C4B00871440 /* tttables.h */,
+				1881A76D21836C4B00871440 /* tttags.h */,
+				1881A72F21836C4B00871440 /* ttunpat.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -470,27 +470,27 @@
 		1881A77D21836C4B00871440 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1881A77E21836C4B00871440 /* pcf */,
-				1881A79221836C4B00871440 /* type1 */,
-				1881A7A321836C4B00871440 /* cache */,
-				1881A7B621836C4B00871440 /* sfnt */,
-				1881A7D121836C4C00871440 /* winfonts */,
+				1881A89621836C4C00871440 /* autofit */,
+				1881A8F621836C4C00871440 /* base */,
 				1881A7D621836C4C00871440 /* bdf */,
-				1881A7DE21836C4C00871440 /* smooth */,
-				1881A7E821836C4C00871440 /* type42 */,
+				1881A91F21836C4D00871440 /* bzip2 */,
+				1881A7A321836C4B00871440 /* cache */,
 				1881A7F321836C4C00871440 /* cff */,
+				1881A86521836C4C00871440 /* cid */,
 				1881A81C21836C4C00871440 /* gzip */,
 				1881A82E21836C4C00871440 /* lzw */,
-				1881A85521836C4C00871440 /* psaux */,
-				1881A86521836C4C00871440 /* cid */,
+				1881A77E21836C4B00871440 /* pcf */,
 				1881A87521836C4C00871440 /* pfr */,
-				1881A89621836C4C00871440 /* autofit */,
+				1881A85521836C4C00871440 /* psaux */,
 				1881A8C021836C4C00871440 /* pshinter */,
-				1881A8CE21836C4C00871440 /* truetype */,
-				1881A8E221836C4C00871440 /* raster */,
 				1881A8ED21836C4C00871440 /* psnames */,
-				1881A8F621836C4C00871440 /* base */,
-				1881A91F21836C4D00871440 /* bzip2 */,
+				1881A8E221836C4C00871440 /* raster */,
+				1881A7B621836C4B00871440 /* sfnt */,
+				1881A7DE21836C4C00871440 /* smooth */,
+				1881A8CE21836C4C00871440 /* truetype */,
+				1881A79221836C4B00871440 /* type1 */,
+				1881A7E821836C4C00871440 /* type42 */,
+				1881A7D121836C4C00871440 /* winfonts */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -689,7 +689,7 @@
 			children = (
 				1881AA3D2183778C00871440 /* glfw3.h */,
 				1881AA3E2183778C00871440 /* glfw3native.h */,
-				1881AA3F2183778C00871440 /* libglfw.3.3.dylib */,
+				183E8CC924B566F6007720F4 /* libglfw.3.3.dylib */,
 			);
 			path = GLFW;
 			sourceTree = "<group>";
@@ -704,6 +704,7 @@
 				18557225209AAAC7001B6AD7 /* Sources */,
 				18557226209AAAC7001B6AD7 /* Frameworks */,
 				18557227209AAAC7001B6AD7 /* CopyFiles */,
+				183E8CCB24B56A70007720F4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -744,6 +745,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		183E8CCB24B56A70007720F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ninstall_name_tool -change \"lib/libglfw.3.dylib\" \"@rpath/libglfw.3.3.dylib\" \"${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18557225209AAAC7001B6AD7 /* Sources */ = {
@@ -920,18 +941,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					FT2_BUILD_LIBRARY,
-					"DEBUG=1",
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/HelloOpenGL\"",
 					"\"$(SRCROOT)/HelloOpenGL/freetype/include\"",
 				);
+				LD_DYLIB_INSTALL_NAME = "@rpath/libglfw.3.3.dylib";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/",
+					"@loader_path/",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/HelloOpenGL/GLFW";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -939,14 +967,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREPROCESSOR_DEFINITIONS = FT2_BUILD_LIBRARY;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					FT2_BUILD_LIBRARY,
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/HelloOpenGL\"",
 					"\"$(SRCROOT)/HelloOpenGL/freetype/include\"",
 				);
+				LD_DYLIB_INSTALL_NAME = "@rpath/libglfw.3.3.dylib";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/",
+					"@loader_path/",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/HelloOpenGL/GLFW";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};

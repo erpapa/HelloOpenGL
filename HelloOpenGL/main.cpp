@@ -355,14 +355,16 @@ int main(int argc, char** argv)
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // 线框模式
 
         glUseProgram(program);
-        // x轴方向旋转
+        // Y轴方向旋转
         float radians = degrees * (M_PI / 180);
         float cos = cosf(radians);
         float sin = sinf(radians);
-        GLfloat matrix[] = { 1.0f, 0.0f, 0.0f, 0.0f,
-            0.0f, cos, sin, 0.0f,
-            0.0f, -sin, cos, 0.0f,
-            0.0f, 0.0f, 0.0f, 1.0f };
+        GLfloat matrix[] = {
+            cos, 0.0f, -sin, 0.0f,
+            0.0f, 1.0f, 0.0f, 0.0f,
+            sin, 0.0f, cos, 0.0f,
+            0.0f, 0.0f, 0.0f, 1.0f
+        };
         glUniformMatrix4fv(transform_uniform, 1, GL_FALSE, matrix);
 
         glBindVertexArray(vao);
@@ -370,7 +372,7 @@ int main(int argc, char** argv)
         
         glfwSwapBuffers(window);             // 交换颜色缓冲
         glfwPollEvents();                   // 检查有没有触发什么事件
-        degrees += 0.01;
+        degrees += 0.2;
     }
     glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
